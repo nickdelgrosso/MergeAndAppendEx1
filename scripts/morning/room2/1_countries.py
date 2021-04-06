@@ -10,10 +10,14 @@ upper_dog = "dog".upper()  # "DOG"
 """
 
 # Raw Data: List the names of origin countries in your team, all in lowercase
-lower_countries = []   # e.g. ["finland", "taiwan"]
+lower_countries = ["spain", "germany", "india"]   # e.g. ["finland", "taiwan"]
+
 
 # Script (fill in here):
-
+upper_countries = []
+for lower_country in lower_countries:
+    upper_country = lower_country.upper()
+    upper_countries.append(upper_country)
     
 # Output:
-# print(upper_countries)
+print(upper_countries)
