@@ -30,13 +30,28 @@ attendance = {'ND': True, 'AG': True, 'BQ': False}
 """ 
 
 # Raw Data: 
-
+import os
+root_path = os.getcwd()
+subdirs = r'.\data\raw'
+fname = r'attendance.txt'
+full_path = os.path.join(subdirs, fname)
 
 # Script (fill in here):
+# Get raw data 
+with open(full_path, "r") as f:
+    text = f.read()
+lines = text.splitlines()
 
-    
+# Process data 
+attendance = {}
+for line in lines:
+    name = line.split(' ')[0]
+    if name[-1] == ':':
+        name = name[:-1] 
+    attendance[name] = True if '?' not in line.split(' ')[1] else False
+
 # Output:
-# print(attendance)
+print(attendance)
 
 
 
