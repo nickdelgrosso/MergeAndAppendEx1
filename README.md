@@ -24,18 +24,105 @@ Having similar vocabulary helps improve communication.  Especially confusing som
 | \[  \]          | "Square Brackets" |
 | \{  \}          | "Curly Braces"   |
 |  \.             | "Dot" |
+| \:              |  "Colon"  |
+|  \;             |  "Semicolon"  |
+|  \=          |   "an equals sign"      |
+|  \=\=        |   "is equal"          |
+| \'    |  "single quote" or "apostrophe"  |
+| \`  | "back tick"  |
+| \"    |   "double quote" or "quotation mark"   |
+| \\  |  "back slash"  |
+|  \/  | "forward slash"  |
+| \!  | "not"  |
+| \& | "ampersand" or "bitwise and"  |
+| and | "and" |
+| \|  | "pipe" or "bitwise or" |
+| or | "or" |
+|   | "space" |
+| \_ | "underscore" |
+|  \-  |  "dash"  |
+|  \> |  "greater than"   |
+|  \< |  "less than"   |
+|  \#  | "hashtag" or "comment"  |
+
 
 ### "Level 2":  Combinations of characters
 
 | **Symbol** | **Spoken Name** |
 | ---------- | -------- |
+|  x = 3  |  "assign 3 to x"  |
+|  x = [] |  "make x an empty list"  |
+  |  x[2]   |  "get item", "get the third item from x", "get the element from x with the index two" |
+|  x = {}  | "make an empty dict/dictionary |
+| x = {"nick": False, "doug": True} |  "Make a dict with names as *keys* and attendance as boolean *values*"  |
+|  x["nick"]  | "get the nick item from the x dict"  |
+| x[2] = "hi" | "set the third item in x to hi"  |
+|   mean(data=x)  | "call the mean function on x" |
+|  \"\"\"   |  "docstring" |
+|  x += 1   | "increment x"    |
+|  x -= 1   |  "decrement x"   |
+|  x.title  |  "get the title attribute from x" |
+|    title(x)    |  "call built-in title function on the string variable x" |
+|    str.title(x)    |  "call the string dot title function on x" |
+|    str.title(x)    |  "call the string package's title function on x" |
+|    x.title()    |  "call the title method on the string variable x" |
+|  x, y = address |  "unpack the address tuple into x and y" |
+| "string1" + "string2",   |  "concatenate two strings", "join two strings" |
+| ", ".join(["string1", "string2"])   |  "concatenate two strings", "join two strings" |
 
+### "Level 3":  Blocks of code
 
+"If x is greater than 4, set y to 3.  Else set y to 10."
+```python
+if x > 4:
+    print("hello")
+    y = 3
+else:
+    y = 10
+```
 
-## The "Loop-Append" Pattern
+"print the value of x as long as x is less than 5"
+```python
+while x < 5:
+    print(x)
+```
+
+"for each name in the list of names, print the length of the name"
+```python
+names = ["alice", "bob", "charlie"]
+
+for i in range(len(names)):
+  name = names[i]
+  print(len(name))
+```
 
 ```python
 names = ["alice", "bob", "charlie"]
+for name in names:
+  print(len(name))
+```
+
+```python
+names = ["alice", "bob", "charlie"]
+ages = [4, 5, 6]
+
+for name, age in zip(names, ages):
+  print(len(name))
+```
+
+```python
+names = ["alice", "bob", "charlie"]
+for idx, name in enumerate(names):
+  print(idx, len(name))
+```
+
+
+### "Level 4" Code Patterns
+
+#### The "Loop-Append" Pattern
+
+```python
+names = ["alice", "bob", "charlie"] 
 
 big_names = []
 for name in names:
