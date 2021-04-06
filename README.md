@@ -33,7 +33,17 @@ Having similar vocabulary helps improve communication.  Especially confusing som
 | \"    |   "double quote" or "quotation mark"   |
 | \\  |  "back slash"  |
 |  \/  | "forward slash"  |
-
+| \!  | "not"  |
+| \& | "ampersand" or "bitwise and"  |
+| and | "and" |
+| \|  | "pipe" or "bitwise or" |
+| or | "or" |
+|   | "space" |
+| \_ | "underscore" |
+|  \-  |  "dash"  |
+|  \> |  "greater than"   |
+|  \< |  "less than"   |
+|  \#  | "hashtag" or "comment"  |
 
 
 ### "Level 2":  Combinations of characters
@@ -49,23 +59,32 @@ Having similar vocabulary helps improve communication.  Especially confusing som
 | x[2] = "hi" | "set the third item in x to hi"  |
 |   mean(data=x)  | "call the mean function on x" |
 |  \"\"\"   |  "docstring" |
-
-
+|  x += 1   | "increment x"    |
+|  x -= 1   |  "decrement x"   |
+|  x.title  |  "get the title attribute from x" |
+|    title(x)    |  "call built-in title function on the string variable x" |
+|    str.title(x)    |  "call the string dot title function on x" |
+|    str.title(x)    |  "call the string package's title function on x" |
+|    x.title()    |  "call the title method on the string variable x" |
+|  x, y = address |  "unpack the address tuple into x and y" |
+| "string1" + "string2",   |  "concatenate two strings", "join two strings" |
+| ", ".join(["string1", "string2"])   |  "concatenate two strings", "join two strings" |
 
 ### "Level 3":  Blocks of code
 
 "If x is greater than 4, set y to 3.  Else set y to 10."
 ```python
 if x > 4:
+    print("hello")
     y = 3
 else:
     y = 10
-````
+```
 
 "print the value of x as long as x is less than 5"
 ```python
 while x < 5:
-  print(x)
+    print(x)
 ```
 
 "for each name in the list of names, print the length of the name"
@@ -73,7 +92,7 @@ while x < 5:
 names = ["alice", "bob", "charlie"]
 
 for i in range(len(names)):
-  name = names[i] 
+  name = names[i]
   print(len(name))
 ```
 
@@ -91,10 +110,19 @@ for name, age in zip(names, ages):
   print(len(name))
 ```
 
-## The "Loop-Append" Pattern
+```python
+names = ["alice", "bob", "charlie"]
+for idx, name in enumerate(names):
+  print(idx, len(name))
+```
+
+
+### "Level 4" Code Patterns
+
+#### The "Loop-Append" Pattern
 
 ```python
-names = ["alice", "bob", "charlie"]  # List of Strings
+names = ["alice", "bob", "charlie"] 
 
 big_names = []
 for name in names:
